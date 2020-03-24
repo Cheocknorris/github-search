@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Github Search</title>
+</head>
+
+<body>
+    <div id="search">
+        <img class="logo" src="github.png" alt="">
+        <h1>Github Search</h1>
+        <input type="text" name="username" placeholder="username">
+        <input type="password" name="password" placeholder="password">
+        <input type="text" name="user-to-search" placeholder="user to search">
+        <button>submit</button>
+
+    </div>
+
+<div class="line">
+
+</div>
+
+<div class="repos-container">
+
+</div>
+
+<!-- bellow here all handlebars info -->
+<script id='repos' type="text/x-handlebars-template">
+    {{#data}}
+    <div class="user">
+        <img class="avatar" src={{owner/avatar_url}}>
+        <h3 class='full-name'>{{full_name}}</h3>
+        <div class="commits-container"></div>
+    </div>
+    {{/data}}
+
+</script>
+
+<script id='commits' type="text/x-handlebars-template">
+    {{#commits}}
+        <div class="commits"><ul><li>
+            {{commit.message}}</li></ul></div>
+    {{/commits}}
+
+</script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
